@@ -1,0 +1,46 @@
+
+<ng-template #divLoading>
+    <mat-grid-list cols="1">
+        <mat-grid-tile>
+            <mat-spinner></mat-spinner>
+        </mat-grid-tile>
+    </mat-grid-list>
+</ng-template>
+
+<div *ngIf="hero; else divLoading" class="flex justify-center mt-10 "> 
+    
+    <mat-card class="w-36 sm:w-64 p-6 shadow-card">
+
+        <mat-card-header>
+            <mat-card-title>{{hero.alter_ego}}</mat-card-title>
+            <mat-card-title>{{hero.superhero}}</mat-card-title>
+        </mat-card-header>
+
+        <img [src]="hero | heroimage" [alt]="hero.superhero" mat-card-image class="w-32 sm:w-64" class="mt-4"/>
+    
+    </mat-card>
+
+    <mat-card class="w-36 sm:w-72 p-6 shadow-card">
+
+        <mat-card-header >
+            <mat-card-title>Informacion</mat-card-title>
+            <mat-card-title>{{hero.superhero}}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-header>
+            <ul class="list-none pl-0">
+                <li class="m-1 my-2"><strong>Primera aparicion:</strong> {{hero.first_appearance}}</li>
+                <li class="m-1 my-2"><strong>Personajes:</strong>  {{hero.characters}}</li>
+                <li class="m-1 my-2"><strong>Editor:</strong> {{hero.publisher}}</li>
+                <li class="m-1 my-2"><strong>Actor:</strong> {{hero.alter_ego}}</li>
+            </ul>
+        </mat-card-header>
+
+       <div class="text-left ms-2">
+        <button mat-button color="warn" (click)="goBack()" >
+            Regresar
+        </button>
+       </div>
+       
+    </mat-card>
+</div>

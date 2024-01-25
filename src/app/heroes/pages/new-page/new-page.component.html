@@ -1,0 +1,81 @@
+<h1 >
+    {{currentHero.id ? 'Editar': 'Agregar'}}
+    Heroe
+  </h1>
+  
+  <mat-divider class=""></mat-divider>
+  
+  <div class="flex flex-col sm:flex-row animate__animated animate__fadeIn mt-8">
+  
+    <div class="w-full sm:w-6/12 m-6">
+      <mat-card class="">
+        <mat-card-content class=" shadow-form">
+          <form class="" [formGroup]="heroForm" >
+  
+            <div class="">
+              <mat-form-field class="w-2/4 p-2">
+                <mat-label>Super heroe</mat-label>
+                <input matInput type="" required formControlName="superhero">
+              </mat-form-field>
+  
+              <mat-form-field class="w-2/4 p-2">
+                <mat-label>Actor</mat-label>
+                <input matInput type="" required formControlName="alter_ego">
+              </mat-form-field>
+            </div>
+  
+            <div class="">
+              <mat-form-field class="w-full">
+                <mat-label>Primera aparicion</mat-label>
+                <input matInput type="" required formControlName="first_appearance">
+              </mat-form-field>
+  
+              <mat-form-field class="w-full">
+                <mat-label>personajes</mat-label>
+                <input matInput type="" required formControlName="characters">
+              </mat-form-field>
+  
+              <mat-form-field class="w-full">
+                <mat-label>Creador</mat-label>
+                <mat-select required formControlName="publisher">
+                  <mat-option *ngFor="let publishe of publisher" [value]="publishe.id">
+                    {{publishe.desc}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+              <mat-form-field class="w-full">
+                <mat-label>Alternative image</mat-label>
+                <input matInput required type="" formControlName="alt_img">
+              </mat-form-field>
+              <p *ngIf="!currentHero.id">Alternativas de imagenes, escribe: heroe-1 , heroe-2, heroe-3, heroe-4, heroe-5</p>
+
+              <div class="flex items-center">
+                <button *ngIf="currentHero.id" (click)="onDeleteHero()" mat-flat-button color="warn" class="m-1">
+                  <mat-icon>delete</mat-icon> Borrar
+                </button>
+  
+                <button  mat-flat-button color="primary" class="m-1" (click)="onSubmit()">
+                  <mat-icon>save</mat-icon> Guardar
+                </button>
+                
+                <div *ngIf="isLoading" class="lds-ring ml-3"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              </div>
+  
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  
+    <div class="w-full sm:w-6/12 flex justify-center items-center">
+      <mat-card class="flex my-4 justify-center items-center shadow-image">
+        <div class="imagen  w-48 sm:w-64 md:w-96">
+          <img   [src]="currentHero | heroimage"  alt="imagen del heroe" mat-card-image w-full h-full object-cover>
+          
+        </div>
+      </mat-card>
+    </div>
+  
+  </div>
+  

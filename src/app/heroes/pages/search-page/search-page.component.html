@@ -1,0 +1,35 @@
+<div class="m-6">
+    <h2 class="text-xl">Buscador</h2>
+    <div class="flex justify-center w-full mt-10">
+        <mat-form-field class="w-full">
+            <mat-label>Buscador de heroes</mat-label>
+            <input type="text" matInput [formControl]="searchInput" (input)="searchHero()" [matAutocomplete]="auto">
+
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onSelectedOption($event)">
+
+                <mat-option *ngFor="let hero of heroes" [value]="hero">
+                  {{hero.superhero}}
+                </mat-option>
+
+                <mat-option  *ngIf="heroes.length === 0 && searchInput.value && searchInput.value.length > 0" value="">
+                    No se encontraron resultados 
+                </mat-option>
+
+              </mat-autocomplete>
+        </mat-form-field>
+    </div>
+
+    <div class="flex justify-center animate__animated animate__fadeIn">
+        <mat-card *ngIf="selectedHero" class="w-1/2 p-4 flex flex-col justify-center items-center">
+            <mat-card-title class="p-2 text-center"> Datos del heroe {{selectedHero.superhero}}</mat-card-title>
+            
+                <mat-card-content class="text-le"> <strong>Publicador:</strong>  {{selectedHero.publisher}}<br>
+                                   <strong>Super poder: </strong> {{selectedHero.superhero}} <br> 
+                                   <strong>Personaje: </strong>  {{selectedHero.characters}}<br> 
+                                   <strong>Primera aparicion: </strong>  {{selectedHero.first_appearance}}<br> 
+                </mat-card-content>
+                <img mat-card-image [src]="'assets/heroes/' + (selectedHero.alt_img) + '.jpg'" class="w-1/2 2xl:w-1/4 mt-2 rounded-md">
+        </mat-card>
+    </div>
+
+</div>

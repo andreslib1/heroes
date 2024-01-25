@@ -1,0 +1,11 @@
+
+<h1 class="p-2 pl-6">Listado de heroes</h1>
+<mat-divider></mat-divider>
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6">
+    <div *ngFor="let hero of heroes" class="m-6 animate__animated animate__fadeInUp">
+        <heroes-hero-card [hero]="hero"></heroes-hero-card>
+    </div>
+</div>
+
+
