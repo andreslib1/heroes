@@ -47,7 +47,7 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     const token = localStorage.getItem('auth_token'); // Obtiene el token de localStorage
-    // Aquí podrías añadir más lógica para verificar la validez del token si es necesario
+   
     return !!token; // Devuelve true si hay un token, false si no hay
   }
 
