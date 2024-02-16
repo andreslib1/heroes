@@ -12,11 +12,10 @@ export class HeroesService {
   
   private baseUrl: string = environments.baseUrl;
 
-  private headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtY2x4cmRxcmh2ZHZlZW5oZHByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDUxOTQ4ODcsImV4cCI6MjAyMDc3MDg4N30.s7sJ-m6IfHbtCsywwxrhNcKjPLb5DnUACJSxEJBESMA', // Reemplaza con tu API key de Supabase
-    'Authorization': `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtY2x4cmRxcmh2ZHZlZW5oZHByIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDUxOTQ4ODcsImV4cCI6MjAyMDc3MDg4N30.s7sJ-m6IfHbtCsywwxrhNcKjPLb5DnUACJSxEJBESMA` // Reemplaza con tu API key de Supabase
-  });
+//Seccion definicion api key
+
+
+////////////////////////////
 
   constructor(private http: HttpClient) { }
 
