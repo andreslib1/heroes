@@ -3,6 +3,9 @@
 ## Descripción
 Este proyecto desarrollado en Angular se centra en la implementación de un sistema CRUD (Crear, Leer, Actualizar, Eliminar) dedicado al registro de personajes de cómics, con énfasis en superhéroes. Presenta las características de cada uno, permitiendo además la modificación, eliminación o creación de nuevos personajes. Se fundamenta en una base de datos tipo "backend as a service" para almacenar o modificar la información ingresada.
 
+## Usuario de prueba para login
+test@gmail.com 
+
 ## Tecnologías Utilizadas
 - Angular 16.1
 - Dependencias:
